@@ -41,11 +41,6 @@ module layer_between_project_and_lab_top
     output logic [w_green - 1:0] vga_green,
     output logic [w_blue  - 1:0] vga_blue,
 
-    output                       mic_lr,
-    output                       mic_ws,
-    output                       mic_sck,
-    input                        mic_sd,
-
     input                        uart_rx,
 
     output                       sticky_failure
@@ -186,23 +181,6 @@ module layer_between_project_and_lab_top
         vga_green <= display_on ? green : '0;
         vga_blue  <= display_on ? blue  : '0;
     end
-
-    //------------------------------------------------------------------------
-
-    inmp441_mic_i2s_receiver
-    # (
-        .clk_mhz  ( clk_mhz )
-    )
-    i_microphone
-    (
-        .clk      ( clk     ),
-        .rst      ( rst     ),
-        .lr       ( mic_lr  ),
-        .ws       ( mic_ws  ),
-        .sck      ( mic_sck ),
-        .sd       ( mic_sd  ),
-        .value    ( mic     )
-    );
 
     //------------------------------------------------------------------------
 
