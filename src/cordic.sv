@@ -76,7 +76,7 @@ begin
 end
 
 
-always_ff @(posedge clk or posedge rst )
+always_ff @(posedge clk )
 begin
     if(rst)
     begin 

@@ -69,10 +69,7 @@ module layer_between_project_and_lab_top
     wire [w_green - 1:0] green;
     wire [w_blue  - 1:0] blue;
 
-    // Microphone, sound output and UART
-
-    wire [         23:0] mic;
-    wire [         15:0] sound;
+    // UART
 
     wire                 uart_tx;
 
@@ -99,7 +96,11 @@ module layer_between_project_and_lab_top
         .w_green       ( w_green       ),
         .w_blue        ( w_blue        )
     )
-    i_lab_top (.*);
+    i_lab_top (
+        .mic (),
+        .sound (),
+        .*
+    );
 
     //------------------------------------------------------------------------
 
