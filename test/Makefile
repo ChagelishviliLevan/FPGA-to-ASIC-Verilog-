@@ -10,6 +10,8 @@ SRC_DIR = $(PWD)/../src
 PROJECT_SOURCES =                         \
                                           \
     cordic.sv                             \
+                                          \
+    counter_with_enable.sv                \
     strobe_gen.sv                         \
     seven_segment_display.sv              \
                                           \

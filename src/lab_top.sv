@@ -1,7 +1,5 @@
 `include "config.svh"
 
-`ifndef SIMULATION
-
 module lab_top
 # (
     parameter  clk_mhz       = 50,
@@ -203,5 +201,3 @@ module lab_top
     );
 
 endmodule
-
-`endif

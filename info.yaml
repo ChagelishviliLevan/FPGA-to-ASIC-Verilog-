@@ -19,6 +19,7 @@ project:
   source_files:
     - "config.svh"
     - "cordic.sv"
+    - "counter_with_enable.sv"
     - "lab_specific_board_config.svh"
     - "lab_top.sv"
     - "layer_between_project_and_lab_top.sv"
