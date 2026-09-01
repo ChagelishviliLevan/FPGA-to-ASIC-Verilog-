@@ -13,7 +13,7 @@ module counter_with_enable
     output logic [w - 1:0] cnt
 );
 
-    always_ff @ (posedge clk or posedge rst)
+    always_ff @ (posedge clk)
         if (rst)
             cnt <= '0;
         else if (enable)

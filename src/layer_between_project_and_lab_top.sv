@@ -97,8 +97,8 @@ module layer_between_project_and_lab_top
         .w_blue        ( w_blue        )
     )
     i_lab_top (
-        .mic (),
-        .sound (),
+        .mic   (24'b0),
+        .sound (unused_sound),
         .*
     );
 

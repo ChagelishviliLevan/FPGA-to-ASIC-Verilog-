@@ -97,6 +97,7 @@ module lab_top
     assign led [0] = finish;
     assign led [1] = calc;
     assign led [2] = start;
+    assign led[6:3] = 4'b0000;
     assign led [7] = slow_clk;
 
     //------------------------------------------------------------------------
@@ -178,6 +179,7 @@ module lab_top
 
     logic [15:0] angle_sticky;
     logic [15:0] sin_out_sticky;
+    logic [15:0] cos_out_sticky;
 
     always_ff @ (posedge clk)
     begin
@@ -193,6 +195,8 @@ module lab_top
 
             if (finish)
                 sin_out_sticky <= sin_out;
+                cos_out_sticky <= cos_out;
+                
         end
     end
 
