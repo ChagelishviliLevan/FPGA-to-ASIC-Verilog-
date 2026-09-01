@@ -179,7 +179,6 @@ module lab_top
 
     logic [15:0] angle_sticky;
     logic [15:0] sin_out_sticky;
-    logic [15:0] cos_out_sticky;
 
     always_ff @ (posedge clk)
     begin
@@ -194,10 +193,7 @@ module lab_top
                 angle_sticky <= angle;
 
             if (finish) 
-            begin
                 sin_out_sticky <= sin_out;
-                cos_out_sticky <= cos_out;
-            end
         end
     end
 
