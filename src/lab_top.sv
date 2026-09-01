@@ -98,7 +98,7 @@ module lab_top
     assign led [1] = calc;
     assign led [2] = start;
     assign led[6:3] = 4'b0000;
-    assign led [7] = slow_clk;
+    assign led[7] = 1'b0; 
 
     //------------------------------------------------------------------------
 
