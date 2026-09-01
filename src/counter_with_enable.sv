@@ -14,9 +14,11 @@ module counter_with_enable
 );
 
     always_ff @ (posedge clk)
+    begin 
         if (rst)
             cnt <= '0;
         else if (enable)
             cnt <= cnt + 1'd1;
+    end
 
 endmodule

@@ -73,6 +73,10 @@ module layer_between_project_and_lab_top
 
     wire                 uart_tx;
 
+    // Unused lab_top outputs
+
+    wire [15:0] unused_sound;
+
     // General-purpose Input/Output
 
     wire [w_gpio  - 1:0] gpio;

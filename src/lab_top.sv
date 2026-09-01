@@ -193,10 +193,11 @@ module lab_top
             if (accept_start)
                 angle_sticky <= angle;
 
-            if (finish)
+            if (finish) 
+            begin
                 sin_out_sticky <= sin_out;
                 cos_out_sticky <= cos_out;
-                
+            end
         end
     end
 
