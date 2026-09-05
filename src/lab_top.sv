@@ -59,7 +59,7 @@ module lab_top
 
     //------------------------------------------------------------------------
 
-    // assign led        = '0;
+       assign led        = '0;
     // assign abcdefgh   = '0;
     // assign digit      = '0;
        assign red        = '0;
@@ -70,7 +70,17 @@ module lab_top
 
     //------------------------------------------------------------------------
 
-    wire               start = key [0];
+    logic key_0_r;
+
+    always_ff @ (posedge clk)
+        if (rst) key_0_r <= 1'b0;
+        else     key_0_r <= key [0];
+
+    wire press_key_0 = ~ key_0_r & key [0];
+
+    //------------------------------------------------------------------------
+
+    wire               start = press_key_0;
     logic       [15:0] angle;
 
     wire               calc;
@@ -93,12 +103,6 @@ module lab_top
         .cos_out ( cos_out ),
         .sin_out ( sin_out )
     );
-
-    assign led [0] = finish;
-    assign led [1] = calc;
-    assign led [2] = start;
-    assign led[6:3] = 4'b0000;
-    assign led[7] = 1'b0; 
 
     //------------------------------------------------------------------------
 
@@ -192,7 +196,7 @@ module lab_top
             if (accept_start)
                 angle_sticky <= angle;
 
-            if (finish) 
+            if (finish)
                 sin_out_sticky <= sin_out;
         end
     end
