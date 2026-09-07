@@ -29,7 +29,7 @@ module tb ();
 
   // Replace tt_um_example with your module name:
   // tt_um_example user_project (
-  Tbilisi_CORDIC_Engine (
+  Tbilisi_CORDIC_Engine user_project (
 
       // Include power ports for the Gate Level test:
 `ifdef GL_TEST
